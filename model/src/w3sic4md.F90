@@ -556,7 +556,7 @@ CONTAINS
       END DO
       WN_I= 0.5 * ALPHA
 
-    CASE (8)
+    CASE (10)
       !CMB added option of cubic fit to Meylan, Horvat & Bitz in prep
       ! ICECOEF1 is thickness
       ! ICECOEF5 is floe size

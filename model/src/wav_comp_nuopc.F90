@@ -1206,7 +1206,7 @@ contains
     integer                  :: history_ymd    ! History date (YYYYMMDD)
     type(ESMF_ALARM)         :: history_alarm
     character(len=128)       :: name
-    integer                  :: alarmcount, dt_cpl
+    integer                  :: alarmcount
     character(len=*),parameter :: subname=trim(modName)//':(ModelSetRunClock) '
     !-------------------------------------------------------------------------------
 
@@ -1274,9 +1274,7 @@ contains
         call ESMF_AlarmSet(restart_alarm, clock=mclock, rc=rc)
         if (ChkErr(rc,__LINE__,u_FILE_u)) return
 #ifndef W3_CESMCOUPLED
-        call ESMF_TimeIntervalGet( dtimestep, s=dt_cpl, rc=rc )
-        if (ChkErr(rc,__LINE__,u_FILE_u)) return
-        call init_is_restart_fh(mcurrTime, dt_cpl, root_task, restartfh_info)
+        call init_is_restart_fh(mclock, root_task, restartfh_info)
 #endif
       end if
 

@@ -455,8 +455,8 @@ CONTAINS
     USE W3PARALL, ONLY: PRINT_MY_TIME
 #endif
     use yowNodepool, only: ListNP, ListNPA, ListIPLG
+    use mpi
     IMPLICIT NONE
-    INCLUDE "mpif.h"
     !/
     !/ ------------------------------------------------------------------- /
     !/ Parameter list
@@ -663,8 +663,8 @@ CONTAINS
     USE W3PARALL, only : GET_JSEA_IBELONG
     USE W3WDATMD, ONLY : VA
     USE W3GDATMD, ONLY: NSEAL, NX, NY
+    use mpi
     IMPLICIT NONE
-    INCLUDE "mpif.h"
     !/
     !/ ------------------------------------------------------------------- /
     !/ Parameter list
@@ -847,10 +847,10 @@ CONTAINS
     USE W3PARALL, ONLY: INIT_GET_JSEA_ISPROC
     USE W3PARALL, ONLY: INIT_GET_ISEA
     use yowDatapool, only: istatus
+    use mpi
     !/
     IMPLICIT NONE
     !
-    INCLUDE "mpif.h"
     !/
     !/ ------------------------------------------------------------------- /
     !/ Parameter list

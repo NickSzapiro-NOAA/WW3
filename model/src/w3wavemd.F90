@@ -500,7 +500,7 @@ CONTAINS
     use w3timemd        , only : set_user_timestring
     !
 #ifdef W3_MPI
-    INCLUDE "mpif.h"
+    use mpi
 #endif
     !/
     !/ ------------------------------------------------------------------- /
@@ -3078,7 +3078,7 @@ CONTAINS
     !/
     !
 #ifdef W3_MPI
-    INCLUDE "mpif.h"
+    use mpi
 #endif
     !/
     !/ ------------------------------------------------------------------- /
@@ -3394,7 +3394,7 @@ CONTAINS
     !/
     !
 #ifdef W3_MPI
-    INCLUDE "mpif.h"
+    use mpi
 #endif
     !/
     !/ ------------------------------------------------------------------- /

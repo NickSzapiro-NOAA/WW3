@@ -52,6 +52,7 @@ module wav_comp_nuopc
 #ifndef W3_CESMCOUPLED
   use shr_is_restart_fh_mod , only : init_is_restart_fh, is_restart_fh, is_restart_fh_type
 #endif
+  use mpi
 
   implicit none
   private ! except
@@ -64,8 +65,6 @@ module wav_comp_nuopc
   private :: ModelSetRunClock
   private :: ModelAdvance
   private :: ModelFinalize
-
-  include "mpif.h"
 
   !--------------------------------------------------------------------------
   ! Private module data

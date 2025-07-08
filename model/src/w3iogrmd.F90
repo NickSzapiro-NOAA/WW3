@@ -312,7 +312,7 @@ CONTAINS
 #endif
     !
 #ifdef W3_MPI
-    INCLUDE "mpif.h"
+    use mpi
 #endif
     !/
     !/ ------------------------------------------------------------------- /

@@ -10,6 +10,7 @@
 module wav_shel_inp
 
   use w3odatmd, only: nogrp, ngrpp, FNMGRD, FNMPNT, FNMRST
+  use mpi
 
   implicit none
   private ! except
@@ -30,8 +31,6 @@ module wav_shel_inp
   logical, public           :: flg2(nogrp)        !< @public flags for whole group - not currently used in cesm
   real, allocatable, public :: x(:)               !< @public x locations for point output
   real, allocatable, public :: y(:)               !< @public y locations for point output
-
-  include "mpif.h"
 
   !===============================================================================
 contains

@@ -362,14 +362,15 @@ CONTAINS
     USE W3GDATMD, ONLY: FILEXT
     !
 #ifdef W3_MPI
-    use mpi
+    use mpi_f08
 #endif
     IMPLICIT NONE
     !/
     !/ ------------------------------------------------------------------- /
     !/ Parameter list
     !/
-    INTEGER, INTENT(IN)          :: NPT, IMOD, MPI_COMM_IOPP
+    INTEGER, INTENT(IN)          :: NPT, IMOD
+    TYPE(MPI_COMM), INTENT(IN)   :: MPI_COMM_IOPP
     REAL, INTENT(INOUT)          :: XPT(NPT), YPT(NPT)
     CHARACTER(LEN=40),INTENT(IN) :: PNAMES(NPT)
     !/
@@ -984,7 +985,7 @@ CONTAINS
 #endif
     !
 #ifdef W3_MPI
-    use mpi
+    use mpi_f08
 #endif
     IMPLICIT NONE
     !/
@@ -1000,7 +1001,7 @@ CONTAINS
          IM(4), IK, ITH, ISP
 #ifdef W3_MPI
     INTEGER                 :: IOFF, IERR_MPI
-    INTEGER                 :: STAT(MPI_STATUS_SIZE,4*NOPTS)
+    type(MPI_STATUS)        :: STAT(MPI_STATUS_SIZE,4*NOPTS)
 #endif
 #ifdef W3_S
     INTEGER, SAVE           :: IENT = 0

@@ -456,15 +456,15 @@ CONTAINS
 #endif
     !/
 #ifdef W3_MPI
-    use mpi
+    use mpi_f08
 #endif
     !/
     !/ ------------------------------------------------------------------- /
     !/ Parameter list
     !/
     INTEGER, INTENT(IN)           :: IMOD, MDS(15), MTRACE(2),      &
-         ODAT(40),NPT, IPRT(6),&
-         MPI_COMM_IN
+         ODAT(40),NPT, IPRT(6)
+    type(MPI_COMM), INTENT(IN)    :: MPI_COMM_IN
     LOGICAL, INTENT(IN)           :: IsMulti
     REAL, INTENT(INOUT)           :: XPT(NPT), YPT(NPT)
     LOGICAL, INTENT(INOUT)        :: FLGRD(NOGRP,NGRPP), FLGD(NOGRP),&
@@ -1849,7 +1849,7 @@ CONTAINS
     USE W3ODATMD, ONLY: NDST, NAPROC, IAPROC
     !/
 #ifdef W3_MPI
-    use mpi
+    use mpi_f08
 #endif
     !/
     !/ ------------------------------------------------------------------- /
@@ -2228,7 +2228,7 @@ CONTAINS
     use w3odatmd, only : restart_from_binary, use_restartnc, use_historync
     !/
 #ifdef W3_MPI
-    use mpi
+    use mpi_f08
 #endif
     !/
     !/ ------------------------------------------------------------------- /
@@ -5566,7 +5566,7 @@ CONTAINS
 #endif
     !/
 #ifdef W3_MPI
-    use mpi
+    use mpi_f08
 #endif
     !/
     !/ ------------------------------------------------------------------- /

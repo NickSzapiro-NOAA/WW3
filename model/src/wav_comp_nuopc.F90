@@ -428,7 +428,7 @@ contains
     call ESMF_GridCompGet(gcomp, vm=vm, rc=rc)
     if (ChkErr(rc,__LINE__,u_FILE_u)) return
 
-    call ESMF_VMGet(vm, mpiCommunicator=mpicomm, peCount=petcount, localPet=iam, rc=rc)
+    call ESMF_VMGet(vm, mpiCommunicator=mpicomm%mpi_val, peCount=petcount, localPet=iam, rc=rc)
     if (ChkErr(rc,__LINE__,u_FILE_u)) return
 
     call ESMF_InfoGetFromHost(gcomp, info=info, rc=rc)
@@ -633,7 +633,7 @@ contains
     end if
 
     if (use_restartnc .or. use_historync) then
-      call wav_pio_init(gcomp, mpicomm, stdout, naproc/num_threads, rc)
+      call wav_pio_init(gcomp, mpicomm%mpi_val, stdout, naproc/num_threads, rc)
       if (ChkErr(rc,__LINE__,u_FILE_u)) return
     end if
 

@@ -228,7 +228,7 @@ contains
   !> @date 08-26-2024
   subroutine read_restart (fname, va, mapsta, mapst2)
 
-    use mpi_f08_f08
+    use mpi_f08
     use w3adatmd    , only : mpi_comm_wave
     use w3gdatmd    , only : sig
     use w3idatmd    , only : icei
@@ -431,7 +431,7 @@ contains
   !> @date 09-22-2024
   subroutine read_globalfield(wave_communicator, vname, nseal_cpl, global_output, global_2d)
 
-    use mpi_f08_f08
+    use mpi_f08
 
     type(MPI_Comm)   , intent(in)    :: wave_communicator  ! needed for mpi_f08
     character(len=*) , intent(in)    :: vname

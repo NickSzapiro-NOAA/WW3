@@ -1001,7 +1001,7 @@ CONTAINS
          IM(4), IK, ITH, ISP
 #ifdef W3_MPI
     INTEGER                 :: IOFF, IERR_MPI
-    type(MPI_STATUS)        :: STAT(MPI_STATUS_SIZE,4*NOPTS)
+    type(MPI_STATUS)        :: STAT(4*NOPTS)
 #endif
 #ifdef W3_S
     INTEGER, SAVE           :: IENT = 0
@@ -1214,7 +1214,7 @@ CONTAINS
 #ifdef W3_MPI
       IOFF   = 1 + 4*(I-1)
       CALL MPI_STARTALL ( 4, IRQPO2(IOFF:IOFF+3), IERR_MPI )
-      CALL MPI_WAITALL  ( 4, IRQPO2(IOFF:IOFF+3), STAT(:,IOFF:IOFF+3), IERR_MPI )
+      CALL MPI_WAITALL  ( 4, IRQPO2(IOFF:IOFF+3), STAT(IOFF:IOFF+3), IERR_MPI )
 #endif
       !
       ! Interpolate spectrum

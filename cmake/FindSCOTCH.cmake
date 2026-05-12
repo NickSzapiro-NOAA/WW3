@@ -77,7 +77,6 @@ if( EXISTS "${scotch_inc}/scotch.h" )
   else()
     message(WARNING "Could not find SCOTCH_RELEASE in scotch.h")
   endif()
-  endif()
 
   string(REGEX MATCH "SCOTCH_PATCHLEVEL ([0-9]+)" VERSION_PATCH_MATCH "${header_content}")
   if(VERSION_PATCH_MATCH)
